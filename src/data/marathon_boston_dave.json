@@ -1,0 +1,735 @@
+{
+	"weeks": [
+		[{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"type": "8km",
+				"description": "8km, steady aerobic",
+				"speed": "",
+				"summary": "8km"
+			},
+			{
+				"type": "easy",
+				"description": "5-6km, easy",
+				"speed": "E",
+				"summary": "6km easy"
+			},
+			{
+				"type": "8km",
+				"description": "8km, 2x hill repeats",
+				"speed": "",
+				"summary": "8km"
+			},
+			{
+				"type": "x-train",
+				"description": "X-train, low impact",
+				"speed": "",
+				"summary": "X-Train"
+			},
+			{
+				"type": "gp",
+				"description": "7km, 2x2km @ GP",
+				"speed": "GP",
+				"summary": "7km gp"
+			},
+			{
+				"type": "Long Run",
+				"description": "18km",
+				"speed": "",
+				"summary": "18km Long Run"
+			}
+		],
+		[{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"description": "8-9km, 3x5min Tempo",
+				"type": "9km",
+				"summary": "9km",
+				"speed": ""
+			},
+			{
+				"description": "5-6km, easy",
+				"type": "easy",
+				"summary": "6km easy",
+				"speed": "E"
+			},
+			{
+				"type": "8km",
+				"description": "8km, 3x hill repeats",
+				"speed": "",
+				"summary": "8km"
+			},
+			{
+				"summary": "X-Train",
+				"speed": "",
+				"description": "X-train, low impact",
+				"type": "x-train"
+			},
+			{
+				"type": "gp",
+				"description": "8km, 2x3km @ GP",
+				"speed": "GP",
+				"summary": "8km gp"
+			},
+			{
+				"summary": "21km Long Run",
+				"speed": "",
+				"description": "21km, 3/1",
+				"type": "Long Run"
+			}
+		],
+		[{
+				"type": "rest",
+				"description": "Rest",
+				"speed": "",
+				"summary": "rest"
+			},
+			{
+				"speed": "E",
+				"summary": "8km easy",
+				"type": "easy",
+				"description": "8km, easy"
+			},
+			{
+				"summary": "6km easy",
+				"speed": "E",
+				"description": "5-6km, easy",
+				"type": "easy"
+			},
+			{
+				"type": "7km",
+				"description": "7km",
+				"speed": "",
+				"summary": "7km"
+			},
+			{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"description": "8km, easy",
+				"type": "easy",
+				"summary": "8km easy",
+				"speed": "E"
+			},
+			{
+				"speed": "",
+				"summary": "15km Long Run",
+				"type": "Long Run",
+				"description": "12-15km"
+			}
+		],
+		[{
+				"type": "rest",
+				"description": "Rest",
+				"speed": "",
+				"summary": "rest"
+			},
+			{
+				"speed": "",
+				"summary": "11km",
+				"type": "11km",
+				"description": "10-11km, 4x5min Tempo"
+			},
+			{
+				"summary": "7km easy",
+				"speed": "E",
+				"description": "6-7km, easy",
+				"type": "easy"
+			},
+			{
+				"summary": "9km",
+				"speed": "",
+				"description": "9km, 4x hill repeats",
+				"type": "9km"
+			},
+			{
+				"summary": "X-Train",
+				"speed": "",
+				"description": "X-train, low impact",
+				"type": "x-train"
+			},
+			{
+				"speed": "GP",
+				"summary": "10km gp",
+				"type": "gp",
+				"description": "10km, 2x4km @ GP"
+			},
+			{
+				"speed": "",
+				"summary": "24km Long Run",
+				"type": "Long Run",
+				"description": "24km"
+			}
+		],
+		[{
+				"type": "rest",
+				"description": "Rest",
+				"speed": "",
+				"summary": "rest"
+			},
+			{
+				"description": "12km, 2x3km @ HMP",
+				"type": "HMP",
+				"summary": "12km HMP",
+				"speed": "HMP"
+			},
+			{
+				"description": "6-7km, easy",
+				"type": "easy",
+				"summary": "7km easy",
+				"speed": "E"
+			},
+			{
+				"description": "10km, 4x hill repeats",
+				"type": "10km",
+				"summary": "10km",
+				"speed": ""
+			},
+			{
+				"description": "X-train, low impact",
+				"type": "x-train",
+				"summary": "X-Train",
+				"speed": ""
+			},
+			{
+				"summary": "12km",
+				"speed": "",
+				"description": "10-12km",
+				"type": "12km"
+			},
+			{
+				"summary": "27km Long Run",
+				"speed": "",
+				"description": "27km, 2xhill finish",
+				"type": "Long Run"
+			}
+		],
+		[{
+				"type": "rest",
+				"description": "Rest",
+				"speed": "",
+				"summary": "rest"
+			},
+			{
+				"description": "14km, 4x7.5min Tempo",
+				"type": "14km",
+				"summary": "14km",
+				"speed": ""
+			},
+			{
+				"speed": "E",
+				"summary": "8km easy",
+				"type": "easy",
+				"description": "7-8km, easy"
+			},
+			{
+				"summary": "11km",
+				"speed": "",
+				"description": "10-11km, 5 x 800m Yasso",
+				"type": "11km"
+			},
+			{
+				"speed": "",
+				"summary": "X-Train",
+				"type": "x-train",
+				"description": "X-train, low impact"
+			},
+			{
+				"type": "gp",
+				"description": "10km, 5km @ GP",
+				"speed": "GP",
+				"summary": "10km gp"
+			},
+			{
+				"type": "Long Run",
+				"description": "29km, 3/1",
+				"speed": "",
+				"summary": "29km Long Run"
+			}
+		],
+		[{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"type": "easy",
+				"description": "8-10km, easy",
+				"speed": "E",
+				"summary": "10km easy"
+			},
+			{
+				"type": "easy",
+				"description": "6-7km, easy",
+				"speed": "E",
+				"summary": "7km easy"
+			},
+			{
+				"type": "8km",
+				"description": "8km",
+				"speed": "",
+				"summary": "8km"
+			},
+			{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"speed": "E",
+				"summary": "10km easy",
+				"type": "easy",
+				"description": "10km, easy"
+			},
+			{
+				"summary": "15km Long Run",
+				"speed": "",
+				"description": "15km",
+				"type": "Long Run"
+			}
+		],
+		[{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"summary": "16km HMP",
+				"speed": "HMP",
+				"description": "16km, 3x3km @ HMP",
+				"type": "HMP"
+			},
+			{
+				"summary": "10km easy",
+				"speed": "E",
+				"description": "8-10km, easy",
+				"type": "easy"
+			},
+			{
+				"description": "12km, 5x hill repeats",
+				"type": "12km",
+				"summary": "12km",
+				"speed": ""
+			},
+			{
+				"description": "X-train, low impact",
+				"type": "x-train",
+				"summary": "X-Train",
+				"speed": ""
+			},
+			{
+				"speed": "GP",
+				"summary": "12km gp",
+				"type": "gp",
+				"description": "12km, 2x5km @ GP"
+			},
+			{
+				"summary": "31km Long Run",
+				"speed": "",
+				"description": "30-31km, 3xhill finish ",
+				"type": "Long Run"
+			}
+		],
+		[{
+				"type": "rest",
+				"description": "Rest",
+				"speed": "",
+				"summary": "rest"
+			},
+			{
+				"description": "18km, 4x10min Tempo",
+				"type": "18km",
+				"summary": "18km",
+				"speed": ""
+			},
+			{
+				"description": "8-10km, easy",
+				"type": "easy",
+				"summary": "10km easy",
+				"speed": "E"
+			},
+			{
+				"description": "12-13km, 7 x 800m Yasso",
+				"type": "13km",
+				"summary": "13km",
+				"speed": ""
+			},
+			{
+				"summary": "X-Train",
+				"speed": "",
+				"description": "X-train, low impact",
+				"type": "x-train"
+			},
+			{
+				"type": "12km",
+				"description": "12km",
+				"speed": "",
+				"summary": "12km"
+			},
+			{
+				"summary": "26km Long Run",
+				"speed": "",
+				"description": "26km, 4xhill finish",
+				"type": "Long Run"
+			}
+		],
+		[{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"type": "HMP",
+				"description": "20km, 3x4km @ HMP",
+				"speed": "HMP",
+				"summary": "20km HMP"
+			},
+			{
+				"speed": "E",
+				"summary": "12km easy",
+				"type": "easy",
+				"description": "10-12km, easy"
+			},
+			{
+				"type": "14km",
+				"description": "14km, 6x hill repeats",
+				"speed": "",
+				"summary": "14km"
+			},
+			{
+				"type": "x-train",
+				"description": "X-train, low impact",
+				"speed": "",
+				"summary": "X-Train"
+			},
+			{
+				"summary": "14km gp",
+				"speed": "GP",
+				"description": "14km, 3x4km @ GP",
+				"type": "gp"
+			},
+			{
+				"summary": "34km Long Run",
+				"speed": "",
+				"description": "32-34km",
+				"type": "Long Run"
+			}
+		],
+		[{
+				"type": "rest",
+				"description": "Rest",
+				"speed": "",
+				"summary": "rest"
+			},
+			{
+				"type": "easy",
+				"description": "8-10km, easy",
+				"speed": "E",
+				"summary": "10km easy"
+			},
+			{
+				"summary": "8km easy",
+				"speed": "E",
+				"description": "7-8km, easy",
+				"type": "easy"
+			},
+			{
+				"type": "10km",
+				"description": "10km",
+				"speed": "",
+				"summary": "10km"
+			},
+			{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"type": "easy",
+				"description": "10km, easy",
+				"speed": "E",
+				"summary": "10km easy"
+			},
+			{
+				"speed": "",
+				"summary": "16km Long Run",
+				"type": "Long Run",
+				"description": "16km"
+			}
+		],
+		[{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"type": "HMP",
+				"description": "20-22km, 3x4km @ HMP",
+				"speed": "HMP",
+				"summary": "22km HMP"
+			},
+			{
+				"description": "10-12km, easy",
+				"type": "easy",
+				"summary": "12km easy",
+				"speed": "E"
+			},
+			{
+				"summary": "16km",
+				"speed": "10k pace",
+				"description": "16km, 4x1600m, near 10K pace",
+				"type": "16km"
+			},
+			{
+				"summary": "X-Train",
+				"speed": "",
+				"description": "X-train, low impact",
+				"type": "x-train"
+			},
+			{
+				"description": "14km, 3x4km @ GP",
+				"type": "gp",
+				"summary": "14km gp",
+				"speed": "GP"
+			},
+			{
+				"speed": "",
+				"summary": "36km Long Run",
+				"type": "Long Run",
+				"description": "34-36km"
+			}
+		],
+		[{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"summary": "14km",
+				"speed": "",
+				"description": "14km, 4x7.5min Tempo",
+				"type": "14km"
+			},
+			{
+				"type": "easy",
+				"description": "8km, easy",
+				"speed": "E",
+				"summary": "8km easy"
+			},
+			{
+				"summary": "14km",
+				"speed": "",
+				"description": "14km, 6x hill repeats",
+				"type": "14km"
+			},
+			{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"speed": "E",
+				"summary": "3km easy",
+				"type": "easy",
+				"description": "3km, easy"
+			},
+			{
+				"description": "30km (ATB)",
+				"type": "Long Run",
+				"summary": "30km Long Run",
+				"speed": ""
+			}
+		],
+		[{
+				"type": "rest",
+				"description": "Rest",
+				"speed": "",
+				"summary": "rest"
+			},
+			{
+				"summary": "20km",
+				"speed": "",
+				"description": "18-20km",
+				"type": "20km"
+			},
+			{
+				"description": "6-8km, easy",
+				"type": "easy",
+				"summary": "8km easy",
+				"speed": "E"
+			},
+			{
+				"summary": "16km",
+				"speed": "",
+				"description": "16km, 9x800m* Yasso",
+				"type": "16km"
+			},
+			{
+				"description": "X-train, low impact",
+				"type": "x-train",
+				"summary": "X-Train",
+				"speed": ""
+			},
+			{
+				"type": "8km",
+				"description": "8km",
+				"speed": "",
+				"summary": "8km"
+			},
+			{
+				"speed": "",
+				"summary": "22km Long Run",
+				"type": "Long Run",
+				"description": "20-22km"
+			}
+		],
+		[{
+				"description": "Rest",
+				"type": "rest",
+				"summary": "rest",
+				"speed": ""
+			},
+			{
+				"speed": "",
+				"summary": "14km",
+				"type": "14km",
+				"description": "14km, 3x10min Tempo"
+			},
+			{
+				"summary": "6km easy",
+				"speed": "E",
+				"description": "6km, easy",
+				"type": "easy"
+			},
+			{
+				"description": "12km, 5x hill repeats",
+				"type": "12km",
+				"summary": "12km",
+				"speed": ""
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"speed": "GP",
+				"summary": "6km gp",
+				"type": "gp",
+				"description": "6km, 5km @ GP"
+			},
+			{
+				"description": "12km",
+				"type": "Long Run",
+				"summary": "12km Long Run",
+				"speed": ""
+			}
+		],
+		[{
+				"summary": "rest",
+				"speed": "",
+				"description": "Rest",
+				"type": "rest"
+			},
+			{
+				"speed": "10k pace",
+				"summary": "8km",
+				"type": "8km",
+				"description": "    8km, 4 x 400m @ 10K pace"
+			},
+			{
+				"type": "easy",
+				"description": "6km easy",
+				"speed": "E",
+				"summary": "6km easy"
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "    Rest"
+			},
+			{
+				"summary": "6km gp",
+				"speed": "GP",
+				"description": "6km, 4km @ GP",
+				"type": "gp"
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"summary": "3km Long Run",
+				"speed": "E",
+				"description": "3km easy",
+				"type": "Long Run"
+			}
+		],
+		[{
+				"speed": "",
+				"summary": "",
+				"type": "",
+				"description": " Boston Marathon"
+			}, {
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			},
+			{
+				"speed": "",
+				"summary": "rest",
+				"type": "rest",
+				"description": "Rest"
+			}
+		]
+	],
+	"title": "Daves Boston Marathon Program"
+}
