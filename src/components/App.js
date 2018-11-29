@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import TrainingGrid from './TrainingGrid';
+
 import marathon_boston_dave from '../data/marathon_boston_dave.json'; 
 import marathon_dave from '../data/marathon_dave.json'; 
+import Races from '../data/Races';
 
 import PropTypes from 'prop-types';
 
@@ -20,6 +22,7 @@ class App extends Component {
 
      this.state = {
        race : cookies.get('race') || '',
+       races : Races,
        desire : cookies.get('desire') || '',
        title : file.title,
        weeks: file.weeks,
@@ -82,6 +85,10 @@ class App extends Component {
       }
     }
   }
+
+  raceSpliter(race,index){
+     return race.split('-')[index]
+  }
   
   render() {
     var {state} = this;
@@ -89,26 +96,31 @@ class App extends Component {
       <div className="App container well">
         <center style={{width:'50%',margin:'0 auto'}}>
         <div className="form-horizontal">
-        <div class="form-group">
+        <div className="form-group">
              <label className="col-md-4 control-label" htmlFor="id_race">Race : </label> 
-             <div class="col-sm-8">
+             <div className="col-sm-8">
               <select value={state.race} id="id_race" onChange={this.onRaceChange.bind(this)}  className="form-control">
                   <option value="">Select Race</option>
-                  <option value="Nov 1">Nov 1</option>
+                  {
+                     state.races.map((r,i) => {
+                       return  <option key={i} value={this.raceSpliter(r,1)}>{r}</option>
+                     })
+                  }
+                  
                   <option value="Nov 2">Nov 2</option>
               </select>
              </div>
           </div>
-          <div class="form-group">
+          <div className="form-group">
               <label className="col-md-4 control-label" htmlFor="id_desire">Desire Finish time : </label>
-              <div class="col-sm-8">
+              <div className="col-sm-8">
                 <input id="id_desire" onChange={this.onChange.bind(this)} onBlur={this.onBlur.bind(this)} value={state.desire} className="form-control  " />
             </div>
           </div>
-          <div class="form-group">
+          <div className="form-group">
            
             <label className="col-md-4 control-label" htmlFor="s_trainingProgram"> Training Program Name : </label>
-            <div class="col-sm-8">  
+            <div className="col-sm-8">  
               <select value={state.selectedFile} id="s_trainingProgram" onChange={this.onProgramChange.bind(this)}  className="form-control">
                   <option value="">Select</option>
                   <option value="marathon_dave.json">marathon dave</option>
@@ -119,7 +131,10 @@ class App extends Component {
         </div>
           
         </center>
-        <TrainingGrid weeks={state.weeks}/>
+        {
+          state.race !== "" && state.selectedFile !== "" &&
+           <TrainingGrid weeks={state.weeks}  raceDate={state.race}/>
+        }
       </div>
     );
   }

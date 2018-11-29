@@ -3,6 +3,7 @@ import WeekRow from './WeekRow';
 import DModal from './DModal';
 
 import PropTypes from 'prop-types';
+import moment  from 'moment';
 
 
 class TrainingGrid extends Component {
@@ -12,10 +13,13 @@ class TrainingGrid extends Component {
     
         this.handler = this.handler.bind(this);
         this.cellClickHandler = this.cellClickHandler.bind(this);
-        
+        this.calculateDate = this.calculateDate.bind(this);
+        this.todayDate = this.todayDate.bind(this);
+
         this.state = {
           show: false,
-          data: ''
+          data: '',
+          startedDate:''
         };
       }
     
@@ -25,6 +29,24 @@ class TrainingGrid extends Component {
 
     cellClickHandler(state,desc) {
         this.setState({ show: state, data:desc });
+    }
+
+    calculateDate(i){
+      
+      var date ;
+      if( moment(this.props.raceDate).day() === 6)
+       date = moment(this.props.raceDate).add(2,'days').subtract(i, 'weeks').format("MMM DD YY");
+      else 
+       date = moment(this.props.raceDate).add(1,'days').subtract(i, 'weeks').format("MMM DD YY");
+
+      return date;
+    }
+
+    todayDate(startedDate,i){      
+        
+      //let cellDate =;
+      
+      return moment(moment(this.calculateDate(startedDate)).add(i,'days').format("MMM DD YY")).isSame(moment(), 'day');  //date === moment().format("MMM DD YY") //moment(date).isSame(moment(),"days");
     }
 
     render() {
@@ -50,7 +72,7 @@ class TrainingGrid extends Component {
 
                     <tbody>
                         {props.weeks.map((week,i) => {
-                            return <WeekRow week= {week} onClickCell={this.cellClickHandler}  date={'Nov '+(i+1)}  />
+                            return <WeekRow key={i} week= {week} onClickCell={this.cellClickHandler}  date={this.calculateDate((props.weeks.length)-i)}  />
                         })}  
                 </tbody>
                 </table>
@@ -64,7 +86,8 @@ class TrainingGrid extends Component {
 }
 
 TrainingGrid.propTypes = {
-    weeks : PropTypes.arrayOf(PropTypes.arrayOf).isRequired
+    weeks : PropTypes.arrayOf(PropTypes.arrayOf).isRequired,
+    raceDate : PropTypes.string.isRequired
 };
 
 export default TrainingGrid;
