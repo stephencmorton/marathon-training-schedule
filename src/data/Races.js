@@ -1,5 +1,5 @@
 var Races = [
-    "Boston - April 14 2019",
+    "Boston - April 15 2019",
     "Cornwall - April 28 2019",
     "Cornwall3 - DEC 30 2018",
     "Ottawa - May 25 2019",

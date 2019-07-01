@@ -32,12 +32,8 @@ class TrainingGrid extends Component {
     }
 
     calculateDate(i){
-      
-      var date ;
-      if( moment(this.props.raceDate).day() === 6)
-       date = moment(this.props.raceDate).add(2,'days').subtract(i, 'weeks').format("MMM DD YY");
-      else 
-       date = moment(this.props.raceDate).add(1,'days').subtract(i, 'weeks').format("MMM DD YY");
+	var raceDow = moment(this.props.raceDate).day();
+	var date = moment(this.props.raceDate).add((8-raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
 
       return date;
     }
