@@ -10,7 +10,7 @@ class DModal extends Component {
       var {props} = this;
       return (
         <div>
-          <Modal show={props.show} onHide={props.onHandler.bind(this,false)}>
+          <Modal show={props.show} onHide={props.onHandler.bind(this,false)} className="modal-dialog-centered">
             
             <Modal.Header closeButton>
             </Modal.Header>

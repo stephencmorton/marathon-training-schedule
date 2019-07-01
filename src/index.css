@@ -19,10 +19,35 @@ code {
 }
 
 .today {
-  background-color: #c0dcea;
+  background-color: #e6ffff;
   border: 2px solid #de4d49 !important;
 }
 
 .previousDate{
-  background-color:#cdcdcd;
+    background-color:#cdcdcd;
+    color:#909090;
 }
+
+td:hover{
+    background-color:#dedede !important;
+}
+
+.raceDay{
+  border: 2px solid yellow !important;
+}
+
+th.thisWeek, td.thisWeek {
+    background-color:#fefefe;
+}
+
+ .modal-dialog {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) !important;
+    }
+ .legend { border: 1px solid #D0D0D0; border-radius: 5px;}
+
+ .theme { color:#337ab7;}
+
+ .pace {white-space: nowrap;}

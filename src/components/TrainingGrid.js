@@ -10,18 +10,18 @@ class TrainingGrid extends Component {
     
     constructor(props, context) {
         super(props, context);
-    
+        
         this.handler = this.handler.bind(this);
         this.cellClickHandler = this.cellClickHandler.bind(this);
         this.calculateDate = this.calculateDate.bind(this);
         this.todayDate = this.todayDate.bind(this);
 
         this.state = {
-          show: false,
-          data: '',
-          startedDate:''
+            show: false,
+            data: '',
+            startedDate:''
         };
-      }
+    }
     
     handler(state) {
         this.setState({ show: state });
@@ -32,50 +32,50 @@ class TrainingGrid extends Component {
     }
 
     calculateDate(i){
-	var raceDow = moment(this.props.raceDate).day();
-	var date = moment(this.props.raceDate).add((8-raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
+        var raceDow = moment(this.props.raceDate).isoWeekday(); //Monday=1, Sunday=7
+        var date = moment(this.props.raceDate).add((8-raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
 
-      return date;
+        return date;
     }
 
     todayDate(startedDate,i){      
         
-      //let cellDate =;
-      
-      return moment(moment(this.calculateDate(startedDate)).add(i,'days').format("MMM DD YY")).isSame(moment(), 'day');  //date === moment().format("MMM DD YY") //moment(date).isSame(moment(),"days");
+        //let cellDate =;
+        
+        return moment(moment(this.calculateDate(startedDate)).add(i,'days').format("MMM DD YY")).isSame(moment(), 'day');  //date === moment().format("MMM DD YY") //moment(date).isSame(moment(),"days");
     }
 
     render() {
         var {props,state} = this;
 
         return (
-            <div>
-                <table className="table table-bordered">
+            <div className="container-fluid">
+              <table className="table table-bordered">
 
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Mon</th>
-                            <th>Tues</th>
-                            <th>Wed</th>
-                            <th>Thur</th>
-                            <th>Fri</th>
-                            <th>Sat</th>
-                            <th>Sun</th>
-                        </tr>  
-                    </thead>  
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Mon</th>
+                    <th>Tues</th>
+                    <th>Wed</th>
+                    <th>Thur</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                  </tr>  
+                </thead>  
 
 
-                    <tbody>
-                        {props.weeks.map((week,i) => {
-                            return <WeekRow key={i} week= {week} onClickCell={this.cellClickHandler}  date={this.calculateDate((props.weeks.length)-i)}  />
-                        })}  
+                <tbody>
+                  {props.weeks.map((week,i) => {
+                      return <WeekRow key={i} week= {week} theme={props.themes[i]} raceDate={this.props.raceDate} onClickCell={this.cellClickHandler}  date={this.calculateDate((props.weeks.length)-i)}  />
+                  })}  
                 </tbody>
-                </table>
+              </table>
 
-                {state.show && 
-                   <DModal onHandler={this.handler} show={state.show} data={state.data} />
-                }
+              {state.show && 
+               <DModal onHandler={this.handler} show={state.show} data={state.data} />
+              }
             </div>
         );
     }
@@ -83,6 +83,7 @@ class TrainingGrid extends Component {
 
 TrainingGrid.propTypes = {
     weeks : PropTypes.arrayOf(PropTypes.arrayOf).isRequired,
+    themes: PropTypes.arrayOf(PropTypes.arrayOf).isRequired,
     raceDate : PropTypes.string.isRequired
 };
 

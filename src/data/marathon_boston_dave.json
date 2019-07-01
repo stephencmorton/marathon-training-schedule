@@ -695,41 +695,43 @@
 				"description": " Boston Marathon"
 			}, {
 				"speed": "",
-				"summary": "rest",
-				"type": "rest",
-				"description": "Rest"
+				"summary": "",
+				"type": "",
+				"description": ""
 			},
 			{
 				"speed": "",
-				"summary": "rest",
-				"type": "rest",
-				"description": "Rest"
+				"summary": "",
+				"type": "",
+				"description": ""
 			},
 			{
 				"speed": "",
-				"summary": "rest",
-				"type": "rest",
-				"description": "Rest"
+				"summary": "",
+				"type": "",
+				"description": ""
 			},
 			{
 				"speed": "",
-				"summary": "rest",
-				"type": "rest",
-				"description": "Rest"
+				"summary": "",
+				"type": "",
+				"description": ""
 			},
 			{
 				"speed": "",
-				"summary": "rest",
-				"type": "rest",
-				"description": "Rest"
+				"summary": "",
+				"type": "",
+				"description": ""
 			},
 			{
 				"speed": "",
-				"summary": "rest",
-				"type": "rest",
-				"description": "Rest"
+				"summary": "",
+				"type": "",
+				"description": ""
 			}
 		]
 	],
-	"title": "Daves Boston Marathon Program"
+    "title": "Daves Boston Marathon Program",
+    "themes": [ "","","Recovery","","","","Recovery","","","","Recovery","","","Taper","Taper","Taper","Race Week"]
+
 }

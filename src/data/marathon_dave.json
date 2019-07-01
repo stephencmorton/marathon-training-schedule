@@ -659,7 +659,52 @@
             "type" : "Long Run",
             "description" : "12km"
          }
+      ],
+      [
+         {
+            "description" : "Rest",
+            "type" : "rest",
+            "summary" : "Rest",
+            "speed" : ""
+         },
+         {
+            "description" : "7-8km, w/ 4x400m SI",
+            "speed" : "SI",
+            "summary" : "14km",
+            "type" : "14km"
+         },
+         {
+            "description" : "Rest",
+            "type" : "rest",
+            "summary" : "Rest",
+            "speed" : ""
+         },
+         {
+            "type" : "gp",
+            "summary" : "5 km",
+            "speed" : "GP",
+            "description" : "5km, w/ 4km @ GP"
+         },
+         {
+            "description" : "Rest",
+            "summary" : "rest",
+            "speed" : "",
+            "type" : "rest"
+         },
+         {
+            "summary" : "6km easy jog",
+            "speed" : "easy",
+            "type" : "easy",
+            "description" : "3km easy jog"
+         },
+         {
+            "summary" : "",
+            "speed" : "",
+            "type" : "",
+            "description" : ""
+         }
       ]
    ],
-   "title" : "Daves Regular Marathon Program"
+    "title" : "Daves Regular Marathon Program",
+    "themes": [ "","","","Recovery","","","","Recovery","","","Recovery","","","Taper","Taper","Race Week"]
 }
