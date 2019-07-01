@@ -9,6 +9,14 @@ class WeekRow extends Component {
   }
 
 
+  isPreviousDate(startedDate,i){      
+        
+    //let cellDate =;
+    
+    return moment(startedDate).add(i,'days').isBefore(moment(), 'day');  //date === moment().format("MMM DD YY") //moment(date).isSame(moment(),"days");
+  }
+
+
   isTodayDate(startedDate,i){      
         
     //let cellDate =;
@@ -22,7 +30,7 @@ class WeekRow extends Component {
       <tr>
           <th>{props.date}</th>
           {props.week.map((week,i) => {
-            return <td key={i}  className={this.isTodayDate(props.date,i) ? 'today' : '' } onClick={props.onClickCell.bind(this,true,this.isEmptyOrNull(week.description))}>{this.isEmptyOrNull(week.summary)}</td>
+              return <td key={i}  className={this.isTodayDate(props.date,i) ? 'today' : this.isPreviousDate(props.date,i) ? 'previousDate' : '' } onClick={props.onClickCell.bind(this,true,this.isEmptyOrNull(week.description))}>{props.date} {this.isEmptyOrNull(week.summary)}</td>
           })}
       </tr>
     );

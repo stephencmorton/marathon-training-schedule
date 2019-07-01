@@ -61,7 +61,7 @@ class TrainingGrid extends Component {
                             <th></th>
                             <th>Mon</th>
                             <th>Tues</th>
-                            <th>Web</th>
+                            <th>Wed</th>
                             <th>Thur</th>
                             <th>Fri</th>
                             <th>Sat</th>

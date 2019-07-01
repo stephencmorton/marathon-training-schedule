@@ -106,8 +106,7 @@ class App extends Component {
                        return  <option key={i} value={this.raceSpliter(r,1)}>{r}</option>
                      })
                   }
-                  
-                  <option value="Nov 2">Nov 2</option>
+                 
               </select>
              </div>
           </div>

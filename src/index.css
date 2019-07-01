@@ -20,4 +20,9 @@ code {
 
 .today {
   background-color: #c0dcea;
+  border: 2px solid #de4d49 !important;
+}
+
+.previousDate{
+  background-color:#cdcdcd;
 }
