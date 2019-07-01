@@ -1,10 +1,12 @@
 {
+    "title" : "Daves Regular Marathon Program",
+    "themes": [ "","","","Recovery","","","","Recovery","","","Recovery","","","Taper","Taper","Race Week"],
    "weeks" : [
       [
          {
             "type" : "x-train",
             "speed" : "",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "description" : "X-train or Rest"
          },
          {
@@ -26,7 +28,7 @@
             "description" : "8km, w/ 6min TUT"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "speed" : "",
             "summary" : "rest",
             "type" : "rest"
@@ -41,14 +43,14 @@
             "description" : "17km",
             "type" : "Long Run",
             "speed" : "",
-            "summary" : "17km Long Run"
+            "summary" : "17km"
          }
       ],
       [
          {
             "description" : "X-train or Rest",
             "type" : "x-train",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : ""
          },
          {
@@ -70,7 +72,7 @@
             "description" : "8-9km, w/ 9min TUT"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "speed" : "",
             "summary" : "rest",
             "type" : "rest"
@@ -82,7 +84,7 @@
             "description" : "8km, w/ 2x3km @ GP"
          },
          {
-            "summary" : "18km Long Run",
+            "summary" : "18km",
             "speed" : "",
             "type" : "Long Run",
             "description" : "18km, 3/1"
@@ -92,7 +94,7 @@
          {
             "description" : "X-train or Rest",
             "speed" : "",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "type" : "x-train"
          },
          {
@@ -114,7 +116,7 @@
             "description" : "9km, w/ 12min TUT"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
             "speed" : "",
             "summary" : "rest"
@@ -127,7 +129,7 @@
          },
          {
             "type" : "Long Run",
-            "summary" : "20km Long Run",
+            "summary" : "20km",
             "speed" : "",
             "description" : "20km"
          }
@@ -135,7 +137,7 @@
       [
          {
             "type" : "x-train",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : "",
             "description" : "X-train or Rest"
          },
@@ -149,7 +151,7 @@
             "type" : "rest",
             "speed" : "",
             "summary" : "rest",
-            "description" : "Rest"
+            "description" : "rest"
          },
          {
             "type" : "6km",
@@ -161,7 +163,7 @@
             "type" : "rest",
             "summary" : "rest",
             "speed" : "",
-            "description" : "Rest"
+            "description" : "rest"
          },
          {
             "description" : "8km, easy",
@@ -172,7 +174,7 @@
          {
             "type" : "Long Run",
             "speed" : "",
-            "summary" : "12km Long Run",
+            "summary" : "12km",
             "description" : "12km"
          }
       ],
@@ -180,7 +182,7 @@
          {
             "description" : "X-train or Rest",
             "speed" : "",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "type" : "x-train"
          },
          {
@@ -205,7 +207,7 @@
             "type" : "rest",
             "summary" : "rest",
             "speed" : "",
-            "description" : "Rest"
+            "description" : "rest"
          },
          {
             "description" : "10km, w/ 2x4km @ GP",
@@ -215,7 +217,7 @@
          },
          {
             "description" : "22km, 3/1",
-            "summary" : "22km Long Run",
+            "summary" : "22km",
             "speed" : "",
             "type" : "Long Run"
          }
@@ -224,7 +226,7 @@
          {
             "description" : "X-train or Rest",
             "type" : "x-train",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : ""
          },
          {
@@ -246,7 +248,7 @@
             "description" : "10km, w/ 5x800m SI"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
             "summary" : "rest",
             "speed" : ""
@@ -261,14 +263,14 @@
             "description" : "24km, 2xhill finish",
             "type" : "Long Run",
             "speed" : "",
-            "summary" : "24km Long Run"
+            "summary" : "24km"
          }
       ],
       [
          {
             "description" : "X-train or Rest",
             "type" : "x-train",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : ""
          },
          {
@@ -293,7 +295,7 @@
             "summary" : "rest",
             "speed" : "",
             "type" : "rest",
-            "description" : "Rest"
+            "description" : "rest"
          },
          {
             "description" : "10-12km",
@@ -302,7 +304,7 @@
             "summary" : "12km"
          },
          {
-            "summary" : "27km Long Run",
+            "summary" : "27km",
             "speed" : "",
             "type" : "Long Run",
             "description" : "27km"
@@ -311,7 +313,7 @@
       [
          {
             "description" : "X-train or Rest",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : "",
             "type" : "x-train"
          },
@@ -325,7 +327,7 @@
             "speed" : "",
             "summary" : "rest",
             "type" : "rest",
-            "description" : "Rest"
+            "description" : "rest"
          },
          {
             "description" : "8km",
@@ -334,7 +336,7 @@
             "type" : "8km"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
             "speed" : "",
             "summary" : "rest"
@@ -349,13 +351,13 @@
             "description" : "15km",
             "type" : "Long Run",
             "speed" : "",
-            "summary" : "15km Long Run"
+            "summary" : "15km"
          }
       ],
       [
          {
             "type" : "x-train",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : "",
             "description" : "X-train or Rest"
          },
@@ -378,7 +380,7 @@
             "summary" : "12km SI"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
             "speed" : "",
             "summary" : "rest"
@@ -390,7 +392,7 @@
             "description" : "12km, w/ 2x5km @ GP"
          },
          {
-            "summary" : "30km Long Run",
+            "summary" : "30km",
             "speed" : "",
             "type" : "Long Run",
             "description" : "28-30km, 3/1"
@@ -398,7 +400,7 @@
       ],
       [
          {
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : "",
             "type" : "x-train",
             "description" : "X-train or Rest"
@@ -416,13 +418,13 @@
             "description" : "7km, easy"
          },
          {
-            "description" : "14km, w/ 4x1600m CI",
-            "summary" : "14km ci",
+            "description" : "14km, w/ 4x1600m SI*",
+            "summary" : "14km SI",
             "speed" : "",
-            "type" : "ci"
+            "type" : "SI"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
             "speed" : "",
             "summary" : "rest"
@@ -444,7 +446,7 @@
          {
             "description" : "X-train or Rest",
             "type" : "x-train",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : ""
          },
          {
@@ -454,7 +456,7 @@
             "type" : "easy"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "speed" : "",
             "summary" : "rest",
             "type" : "rest"
@@ -466,7 +468,7 @@
             "description" : "10km, easy"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "summary" : "rest",
             "speed" : "",
             "type" : "rest"
@@ -480,13 +482,13 @@
          {
             "type" : "Long Run",
             "speed" : "",
-            "summary" : "32km Long Run",
+            "summary" : "32km",
             "description" : "32km"
          }
       ],
       [
          {
-            "description" : "Rest",
+            "description" : "rest",
             "speed" : "",
             "summary" : "rest",
             "type" : "rest"
@@ -510,7 +512,7 @@
             "description" : "14km, w/ 9x800m SI"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "speed" : "",
             "summary" : "rest",
             "type" : "rest"
@@ -523,7 +525,7 @@
          },
          {
             "description" : "25km",
-            "summary" : "25km Long Run",
+            "summary" : "25km",
             "speed" : "",
             "type" : "Long Run"
          }
@@ -532,7 +534,7 @@
          {
             "type" : "x-train",
             "speed" : "",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "description" : "X-train or Rest"
          },
          {
@@ -557,7 +559,7 @@
             "type" : "rest",
             "summary" : "rest",
             "speed" : "",
-            "description" : "Rest"
+            "description" : "rest"
          },
          {
             "description" : "12-14km",
@@ -568,14 +570,14 @@
          {
             "description" : "34-36km",
             "speed" : "",
-            "summary" : "36km Long Run",
+            "summary" : "36km",
             "type" : "Long Run"
          }
       ],
       [
          {
             "speed" : "",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "type" : "x-train",
             "description" : "X-train or Rest"
          },
@@ -586,7 +588,7 @@
             "description" : "16 km, w/ 3x3km @ HMP"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
             "summary" : "rest",
             "speed" : ""
@@ -598,7 +600,7 @@
             "speed" : "SI"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
             "summary" : "rest",
             "speed" : ""
@@ -612,7 +614,7 @@
          {
             "description" : "20km, w/ 16-18 @ GP",
             "speed" : "GP",
-            "summary" : "20km Long Run",
+            "summary" : "20km",
             "type" : "Long Run"
          }
       ],
@@ -620,7 +622,7 @@
          {
             "description" : "X-train or Rest",
             "type" : "x-train",
-            "summary" : "X-Train",
+            "summary" : "X-Train or Rest",
             "speed" : ""
          },
          {
@@ -642,7 +644,7 @@
             "description" : "10km, w/ 8km @ GP"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "summary" : "rest",
             "speed" : "",
             "type" : "rest"
@@ -654,7 +656,7 @@
             "description" : "6km, w/ 5km @ GP"
          },
          {
-            "summary" : "12km Long Run",
+            "summary" : "12km",
             "speed" : "",
             "type" : "Long Run",
             "description" : "12km"
@@ -662,9 +664,9 @@
       ],
       [
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
-            "summary" : "Rest",
+            "summary" : "rest",
             "speed" : ""
          },
          {
@@ -674,9 +676,9 @@
             "type" : "14km"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "type" : "rest",
-            "summary" : "Rest",
+            "summary" : "rest",
             "speed" : ""
          },
          {
@@ -686,7 +688,7 @@
             "description" : "5km, w/ 4km @ GP"
          },
          {
-            "description" : "Rest",
+            "description" : "rest",
             "summary" : "rest",
             "speed" : "",
             "type" : "rest"
@@ -704,7 +706,5 @@
             "description" : ""
          }
       ]
-   ],
-    "title" : "Daves Regular Marathon Program",
-    "themes": [ "","","","Recovery","","","","Recovery","","","Recovery","","","Taper","Taper","Race Week"]
+   ]
 }

@@ -14,8 +14,16 @@ class TrainingGrid extends Component {
         this.handler = this.handler.bind(this);
         this.cellClickHandler = this.cellClickHandler.bind(this);
         this.calculateDate = this.calculateDate.bind(this);
-        this.todayDate = this.todayDate.bind(this);
+        //this.raceDow = moment(this.props.raceDate).isoWeekday(); //Monday=1, Sunday=7
 
+	var raceday_m =  moment(this.props.raceDate);
+        this.raceDow = raceday_m.isoWeekday(); //Monday=1, Sunday=7
+
+	this.numWeeks = this.props.weeks.length-1;
+	var raceWeekMonday_m = raceday_m.subtract(this.raceDow -1, 'days');
+	var trainingStart_m  = raceWeekMonday_m.subtract(this.numWeeks, 'weeks');
+	this.todayWeek        = moment().isoWeek() - trainingStart_m.isoWeek();
+	
         this.state = {
             show: false,
             data: '',
@@ -32,17 +40,9 @@ class TrainingGrid extends Component {
     }
 
     calculateDate(i){
-        var raceDow = moment(this.props.raceDate).isoWeekday(); //Monday=1, Sunday=7
-        var date = moment(this.props.raceDate).add((8-raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
+        var date = moment(this.props.raceDate).add((8-this.raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
 
         return date;
-    }
-
-    todayDate(startedDate,i){      
-        
-        //let cellDate =;
-        
-        return moment(moment(this.calculateDate(startedDate)).add(i,'days').format("MMM DD YY")).isSame(moment(), 'day');  //date === moment().format("MMM DD YY") //moment(date).isSame(moment(),"days");
     }
 
     render() {
@@ -68,7 +68,7 @@ class TrainingGrid extends Component {
 
                 <tbody>
                   {props.weeks.map((week,i) => {
-                      return <WeekRow key={i} week= {week} theme={props.themes[i]} raceDate={this.props.raceDate} onClickCell={this.cellClickHandler}  date={this.calculateDate((props.weeks.length)-i)}  />
+                      return <WeekRow key={i} week= {week} theme={props.themes[i]} onClickCell={this.cellClickHandler} weekNum={i} raceDow={this.raceDow} raceWeek={this.numWeeks} todayWeek={this.todayWeek} date={this.calculateDate((props.weeks.length)-i)}  />
                   })}  
                 </tbody>
               </table>

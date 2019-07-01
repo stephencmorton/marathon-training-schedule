@@ -48,7 +48,7 @@ export class Vdot
         var velMaximum  = this.VO2ToVel(this.VO2Max);
         var velSpeed    = this.VO2ToVel(this.VO2Max * 1.1);
         var vellong_l   = this.VO2ToVel(this.VO2Max * 0.75);
-        var velxlong    = this.VO2ToVel(this.VO2Max * .6);
+//        var velxlong    = this.VO2ToVel(this.VO2Max * .6);
         var velYasso    = velMaximum * 1.95;
         
         var toAppend;
@@ -64,8 +64,8 @@ export class Vdot
         frm.tempo    = '' + this.timeConvert(velTempo)   + toAppend;
         frm.maximum  = '' + this.timeConvert(velMaximum) + toAppend;
         frm.speed    = '' + this.timeConvert(velSpeed)   + toAppend;
-        frm.xlong    = '' + this.timeConvert(vellong_l)
-            + ' - ' + this.timeConvert(velEasy)   + toAppend;
+        frm.xlong    = '' + this.timeConvert(velEasy)
+            + ' - ' + this.timeConvert(vellong_l)   + toAppend;
         frm.gp        = this.timeConvert(this.speed) + toAppend;
         var oldMetric = this.metric;
         this.metric = false;

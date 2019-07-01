@@ -12,8 +12,8 @@
          {
             "speed" : "T",
             "type" : "7 km",
-            "description" : "7 km, including 10-15min T",
-            "summary" : "7 km"
+            "description" : "7 km, w/ 10-15min T",
+            "summary" : "7 km, w/ 10-15min T"
          },
          {
             "description" : "5 km easy, or X-Train",
@@ -22,8 +22,8 @@
             "type" : "X-Train"
          },
          {
-            "summary" : "8 km",
-            "description" : "8 km, including 6min TUT",
+            "summary" : "8 km, w/ 6min TUT",
+            "description" : "8 km, w/ 6min TUT",
             "speed" : "TUT",
             "type" : "8 km"
          },
@@ -40,7 +40,7 @@
             "description" : "5 km"
          },
          {
-            "summary" : "14 km Long Run",
+            "summary" : "12/14 km",
             "description" : "12/14 km",
             "speed" : "",
             "type" : "Long Run"
@@ -54,8 +54,8 @@
             "type" : "Rest"
          },
          {
-            "description" : "8 km, including 15-20min T",
-            "summary" : "8 km",
+            "description" : "8 km, w/ 15-20min T",
+            "summary" : "8 km, w/ 15-20min T",
             "type" : "8 km",
             "speed" : "T"
          },
@@ -84,7 +84,7 @@
             "summary" : "5 km @ GP"
          },
          {
-            "summary" : "10 km Long Run",
+            "summary" : "8/10 km",
             "description" : "8/10 km",
             "speed" : "",
             "type" : "Long Run"
@@ -110,7 +110,7 @@
             "description" : "5 km easy, or X-Train"
          },
          {
-            "description" : "10 km, including 8min TUT",
+            "description" : "10 km, w/ 8min TUT",
             "summary" : "10 km",
             "speed" : "TUT",
             "type" : "10 km"
@@ -128,7 +128,7 @@
             "type" : "Rest"
          },
          {
-            "summary" : "16km Long Run",
+            "summary" : "14/16km",
             "description" : "14/16km",
             "type" : "Long Run",
             "speed" : ""
@@ -144,8 +144,8 @@
          {
             "speed" : "T",
             "type" : "9 km",
-            "summary" : "9 km",
-            "description" : "9 km, including 20-25min T"
+            "summary" : "9 km, w/ 20-25min T",
+            "description" : "9 km, w/ 20-25min T"
          },
          {
             "summary" : "5 km easy, or X-Train",
@@ -174,7 +174,7 @@
          {
             "speed" : "",
             "type" : "Long Run",
-            "summary" : "17 km Long Run",
+            "summary" : "15/17 km",
             "description" : "15/17 km"
          }
       ],
@@ -186,8 +186,8 @@
             "speed" : ""
          },
          {
-            "summary" : "11 km",
-            "description" : "11 km, including 30min T",
+            "summary" : "11 km, w/ 30min T",
+            "description" : "11 km, w/ 30min T",
             "speed" : "T",
             "type" : "11 km"
          },
@@ -213,13 +213,13 @@
             "speed" : "GP",
             "type" : "GP",
             "description" : "20min easy, w/ 3x1min GP",
-            "summary" : "GP"
+            "summary" : "20min easy, w/ 3x1min GP"
          },
          {
             "type" : "Long Run",
             "speed" : "",
-            "description" : "MEC Spring Flyer 10K",
-            "summary" : "Long Run"
+            "description" : "10k race",
+            "summary" : "19k race"
          }
       ],
       [
@@ -263,7 +263,7 @@
             "speed" : "",
             "type" : "Long Run",
             "description" : "18/20 km",
-            "summary" : "20 km Long Run"
+            "summary" : "18/20 km"
          }
       ],
       [
@@ -288,7 +288,7 @@
          {
             "type" : "10 km",
             "speed" : "",
-            "summary" : "10 km",
+            "summary" : "8/10 km",
             "description" : "8/10 km"
          },
          {
@@ -305,7 +305,7 @@
          },
          {
             "description" : "12/14 km",
-            "summary" : "14 km Long Run",
+            "summary" : "12/14 km",
             "type" : "Long Run",
             "speed" : ""
          }
@@ -320,8 +320,8 @@
          {
             "speed" : "T",
             "type" : "12 km",
-            "description" : "12 km, including 35-40min T",
-            "summary" : "12 km"
+            "description" : "12 km, w/ 35-40min T",
+            "summary" : "12 km, w/ 35-40min T"
          },
          {
             "description" : "6 km easy, or X-Train",
@@ -351,7 +351,7 @@
             "type" : "Long Run",
             "speed" : "",
             "description" : "21/23 km, on-course",
-            "summary" : "23 km Long Run"
+            "summary" : "21/23 km"
          }
       ],
       [
@@ -364,8 +364,8 @@
          {
             "speed" : "T",
             "type" : "12 km",
-            "description" : "12 km, including 40min T",
-            "summary" : "12 km"
+            "description" : "12 km, w/ 40min T",
+            "summary" : "12 km, w/ 40min T"
          },
          {
             "summary" : "6 km easy, or X-Train",
@@ -394,7 +394,7 @@
          {
             "type" : "Long Run",
             "speed" : "",
-            "summary" : "25 km Long Run",
+            "summary" : "23/25 km",
             "description" : "23/25 km"
          }
       ],
@@ -408,8 +408,8 @@
          {
             "speed" : "T",
             "type" : "8 km",
-            "description" : "8 km, including 20min T",
-            "summary" : "8 km"
+            "description" : "8 km, w/ 20min T",
+            "summary" : "8 km, w/ 20min T"
          },
          {
             "description" : "5 km easy",
@@ -438,7 +438,7 @@
          {
             "speed" : "",
             "type" : "Long Run",
-            "summary" : "12 km Long Run",
+            "summary" : "12 km",
             "description" : "12 km"
          }
       ],
@@ -451,7 +451,7 @@
          },
          {
             "description" : "4 x 400m SI",
-            "summary" : "4 x 800m SI",
+            "summary" : "4 x 400m SI",
             "type" : "SI",
             "speed" : "SI"
          },
@@ -464,8 +464,8 @@
          {
             "type" : "GP",
             "speed" : "GP",
-            "description" : "5 km, w/ 15min at GP",
-            "summary" : "5 km"
+            "description" : "5 km, w/ 15min@GP",
+            "summary" : "5 km, w/ 15min@GP"
          },
          {
             "description" : "Rest",
