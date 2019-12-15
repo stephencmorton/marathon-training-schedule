@@ -7,30 +7,37 @@ import moment  from 'moment';
 
 
 class TrainingGrid extends Component {
-    
+
     constructor(props, context) {
         super(props, context);
-        
+
         this.handler = this.handler.bind(this);
         this.cellClickHandler = this.cellClickHandler.bind(this);
         this.calculateDate = this.calculateDate.bind(this);
         //this.raceDow = moment(this.props.raceDate).isoWeekday(); //Monday=1, Sunday=7
 
-	var raceday_m =  moment(this.props.raceDate);
-        this.raceDow = raceday_m.isoWeekday(); //Monday=1, Sunday=7
+        //this.calculateparms();
 
-	this.numWeeks = this.props.weeks.length-1;
-	var raceWeekMonday_m = raceday_m.subtract(this.raceDow -1, 'days');
-	var trainingStart_m  = raceWeekMonday_m.subtract(this.numWeeks, 'weeks');
-	this.todayWeek        = moment().isoWeek() - trainingStart_m.isoWeek();
-	
         this.state = {
             show: false,
             data: '',
             startedDate:''
         };
     }
-    
+
+    calculateparms()
+    {
+      var raceday_m =  moment(this.props.raceDate);
+      this.raceDow = raceday_m.isoWeekday(); //Monday=1, Sunday=7
+
+      this.numWeeks = this.props.weeks.length-1;
+      var raceWeekMonday_m = raceday_m.subtract(this.raceDow -1, 'days');
+      var trainingStart_m  = raceWeekMonday_m.subtract(this.numWeeks, 'weeks');
+      this.todayYear = new Date().getFullYear();
+      this.todayWeek        = moment().isoWeek() - trainingStart_m.isoWeek() + this.todayYear;
+
+    }
+
     handler(state) {
         this.setState({ show: state });
     }
@@ -48,6 +55,7 @@ class TrainingGrid extends Component {
     render() {
         var {props,state} = this;
 
+        this.calculateparms();
         return (
             <div className="container-fluid">
               <table className="table table-bordered">
@@ -62,18 +70,18 @@ class TrainingGrid extends Component {
                     <th>Fri</th>
                     <th>Sat</th>
                     <th>Sun</th>
-                  </tr>  
-                </thead>  
+                  </tr>
+                </thead>
 
 
                 <tbody>
                   {props.weeks.map((week,i) => {
-                      return <WeekRow key={i} week= {week} theme={props.themes[i]} onClickCell={this.cellClickHandler} weekNum={i} raceDow={this.raceDow} raceWeek={this.numWeeks} todayWeek={this.todayWeek} date={this.calculateDate((props.weeks.length)-i)}  />
-                  })}  
+                      return <WeekRow key={i} week= {week} theme={props.themes[i]} onClickCell={this.cellClickHandler} weekNum={i + this.todayYear} raceDow={this.raceDow} raceWeek={this.numWeeks + this.todayYear} todayWeek={this.todayWeek} date={this.calculateDate((props.weeks.length)-i)}  />
+                  })}
                 </tbody>
               </table>
 
-              {state.show && 
+              {state.show &&
                <DModal onHandler={this.handler} show={state.show} data={state.data} />
               }
             </div>

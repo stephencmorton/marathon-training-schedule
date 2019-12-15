@@ -5,8 +5,8 @@ class WeekRow extends Component {
 
         constructor(props, context) {
             super(props, context);
-	    this.today_dow = new Date().getDay();
-	    if (this.today_dow === 0) {this.today_dow = 7;}
+            this.today_dow = new Date().getDay();
+            if (this.today_dow === 0) {this.today_dow = 7;}
     }
 
     isEmptyOrNull(value){
@@ -23,7 +23,7 @@ class WeekRow extends Component {
               {props.week.map((week,i) => {
                   var summary = week.summary; /* week.description;*/ /*.replace(',',"<p>");*/
                   if (week.summary !== week.description) {summary = week.summary + " ...";}
-		  return <td key={i} className={ (props.weekNum === props.raceWeek && props.raceDow === (i+1)) ? 'raceDay' : (props.weekNum === props.todayWeek && this.today_dow === (i+1)) ? 'today' : (props.weekNum === props.todayWeek) ? 'thisWeek' : (props.weekNum < props.todayWeek) ? 'previousDate' : '' } onClick={props.onClickCell.bind(this,true,this.isEmptyOrNull(week.description))}>
+                  return <td key={i} className={ (props.weekNum === props.raceWeek && props.raceDow === (i+1)) ? 'raceDay' : (props.weekNum === props.todayWeek && this.today_dow === (i+1)) ? 'today' : (props.weekNum === props.todayWeek) ? 'thisWeek' : (props.weekNum < props.todayWeek) ? 'previousDate' : '' } onClick={props.onClickCell.bind(this,true,this.isEmptyOrNull(week.description))}>
                       { (props.weekNum === props.raceWeek && props.raceDow === (i+1)) ? "Race" : this.isEmptyOrNull(summary)}</td>
               })}
             </tr>

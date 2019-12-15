@@ -27,7 +27,7 @@ class App extends Component {
         var dist = 42195;
         if (String(file).includes('half')) { dist=21098;}
         var vobj = new Vdot(true, dist, gp + ":00");
-	var plan = this.onSelectFile(file);
+        var plan = this.onSelectFile(file);
         this.state = {
             race : localStorage.getItem('race') || '',
             races : Races,
@@ -232,7 +232,7 @@ class App extends Component {
                     <td class="pace">{state.paces.speed} - {state.paces.maximum}</td>
                     <td>High 4</td>
                     <td>
-		      Speed intervals are to stress your aerobic power. The faster pace is for 400s and you can adjust as required for longer distances.
+                      Speed intervals are to stress your aerobic power. The faster pace is for 400s and you can adjust as required for longer distances.
                       Recovery is equal duration of the repetition (e.g., 3min interval, 3min rest).<br/>
                       For 800m "Yasso" intervals, see below.
                     </td>
@@ -243,9 +243,9 @@ class App extends Component {
                     <td class="pace">{state.paces.yasso}</td>
                     <td>High 4</td>
                     <td>
-		      Run your 800 repeats using the same numbers as your marathon time. In other words, if you run a 3-hour marathon,
-	              you do the 800s in 3 minutes. A 3:10 marathoner does 3:10 repeats; 3:20 marathoner, 3:20 repeats, etc.
-		      It seems silly, but it works.<br/>
+                      Run your 800 repeats using the same numbers as your marathon time. In other words, if you run a 3-hour marathon,
+                      you do the 800s in 3 minutes. A 3:10 marathoner does 3:10 repeats; 3:20 marathoner, 3:20 repeats, etc.
+                      It seems silly, but it works.<br/>
                       Recovery is equal duration of the repetition (e.g., 3min interval, 3min rest).<br/>
                     </td>
                   </tr>
