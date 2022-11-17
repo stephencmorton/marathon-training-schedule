@@ -8,7 +8,7 @@
     "react-bootstrap": "^0.32.4",
     "react-cookie": "^3.0.4",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1",
+    "react-scripts": "2.1.8",
     "require-context": "^1.1.0"
   },
   "scripts": {
