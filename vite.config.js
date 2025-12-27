@@ -7,12 +7,3 @@ export default defineConfig({
     outDir: 'build', // CRA's default build output
   },
 });
-
-  // Workaround before renaming .js to .jsx
-  optimizeDeps: {
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-      },
-    },
-  },
