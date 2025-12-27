@@ -3,7 +3,6 @@ import WeekRow from './WeekRow';
 import DModal from './DModal';
 
 import PropTypes from 'prop-types';
-// import moment  from 'moment';
 
 import './DateFuncs';
 
@@ -15,8 +14,6 @@ class TrainingGrid extends Component {
         this.handler = this.handler.bind(this);
         this.cellClickHandler = this.cellClickHandler.bind(this);
         this.calculateDate = this.calculateDate.bind(this);
-        //this.raceDow = moment(this.props.raceDate).isoWeekday(); //Monday=1, Sunday=7
-
         //this.calculateparms();
 
         this.state = {
@@ -61,7 +58,7 @@ class TrainingGrid extends Component {
       });
     }
     calculateDate(i){
-        // var date = moment(this.props.raceDate).add((8-this.raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
+        
         const baseDate = new Date(this.props.raceDate);
 
         // Add (8 - this.raceDow) days
