@@ -15,6 +15,8 @@ import Races from '../data/Races';
 
 function App() {
 
+    const MARATHON_DIST = 42195;
+    const HALF_DIST    = 21098;
     function onSelectFile(fileName){
         switch(fileName){
         case 'marathon_boston_dave.json':{
@@ -46,9 +48,15 @@ function App() {
 
     const initial = (() => {
         const file = localStorage.getItem('selectedFile') || '';
-        const gp = localStorage.getItem('gp') || '4:00';
-        let dist = 42195;
-        if (String(file).includes('half')) { dist=21098; }
+        var gp = '4:00';
+        {
+          let read_gp = localStorage.getItem('gp');
+          if (/^\d:\d\d$/.test(read_gp)) {
+              gp = read_gp
+          }
+        }
+        let dist = MARATHON_DIST;
+        if (String(file).includes('half')) { dist=HALF_DIST; }
         const vobj = new Vdot(true, dist, gp + ":00");
         const plan = onSelectFile(file);
         return {
@@ -79,8 +87,8 @@ function App() {
     function onProgramChange(e){
         const file = e.target.value;
         const fileContent = onSelectFile(file);
-        let dist = 42195;
-        if (String(file).includes('half')) { dist=21098; }
+        let dist = MARATHON_DIST;
+        if (String(file).includes('half')) { dist=HALF_DIST; }
         const vobj = new Vdot(true, dist, state.gp + ":00");
         localStorage.setItem('selectedFile', file);
         setState(prev => ({
