@@ -6,7 +6,7 @@
     "moment": "^2.22.2",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
-    "react-cookie": "^3.0.4",
+    "react-cookie": "^8.0.1",
     "react-dom": "^16.6.3",
     "require-context": "^1.1.0"
   },
