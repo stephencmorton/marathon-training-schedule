@@ -195,14 +195,15 @@ class App extends Component {
                   <tr>
                     <td>E</td>
                     <td>Easy</td>
-                    <td class="pace">{state.paces.easy}</td>
+                    <td className="pace">{state.paces.easy}</td>
                     <td>2</td>
                     <td>These are days of semi-rest, nevertheless, as the weekend mileage builds, the weekday mileage also builds.<br/>
-                    </td> </tr>
+                    </td>
+                    </tr>
                   <tr>
                     <td>LR</td>
                     <td>Long Run</td>
-                    <td class="pace">{state.paces.xlong}</td>
+                    <td className="pace">{state.paces.xlong}</td>
                     <td>2</td>
                     <td>Pace for your long runs. Normally GP + 20-30s
                     </td>
@@ -210,7 +211,7 @@ class App extends Component {
                   <tr>
                     <td>GP<br/>MP</td>
                     <td>Goal Pace<br/>Marathon P</td>
-                    <td class="pace">{state.paces.gp}</td>
+                    <td className="pace">{state.paces.gp}</td>
                     <td>Mid-2</td>
                     <td>Your Goal Pace for your marathon race.<br/>
                       HMP is typically 6-10s slower than your T pace.
@@ -219,7 +220,7 @@ class App extends Component {
                   <tr>
                     <td>T</td>
                     <td>Tempo / <br/>Threshold</td>
-                    <td class="pace">{state.paces.tempo}</td>
+                    <td className="pace">{state.paces.tempo}</td>
                     <td>3/4 boundary</td>
                     <td>Tempo runs help you improve your endurance, running economy and your running form.
                       They are sometimes described as 'threshold' or 'hard but controlled' runs, and they will help
@@ -231,7 +232,7 @@ class App extends Component {
                   <tr>
                     <td>SI</td>
                     <td>Speed Interval</td>
-                    <td class="pace">{state.paces.speed} - {state.paces.maximum}</td>
+                    <td className="pace">{state.paces.speed} - {state.paces.maximum}</td>
                     <td>High 4</td>
                     <td>
                       Speed intervals are to stress your aerobic power. The faster pace is for 400s and you can adjust as required for longer distances.
@@ -242,7 +243,7 @@ class App extends Component {
                   <tr>
                     <td>Y</td>
                     <td>Yasso Intervals</td>
-                    <td class="pace">{state.paces.yasso}</td>
+                    <td className="pace">{state.paces.yasso}</td>
                     <td>High 4</td>
                     <td>
                       Run your 800 repeats using the same numbers as your marathon time. In other words, if you run a 3-hour marathon,

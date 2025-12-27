@@ -20,7 +20,7 @@ class WeekRow extends Component {
         var weeknum = props.weekIndex ; 
         return (
             <tr >
-              <th className={(props.weekNum === props.todayWeek) ? 'thisWeek' : (props.weekNum < props.todayWeek) ? 'previousDate' : ''} >{weeknum} - {props.date} <br/><span class="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>
+              <th className={(props.weekNum === props.todayWeek) ? 'thisWeek' : (props.weekNum < props.todayWeek) ? 'previousDate' : ''} >{weeknum} - {props.date} <br/><span className="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>
               {props.week.map((week,i) => {
                   var summary = week.summary; /* week.description;*/ /*.replace(',',"<p>");*/
                   if (week.summary !== week.description) {summary = week.summary + " ...";}
