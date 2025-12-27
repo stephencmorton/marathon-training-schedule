@@ -3,8 +3,9 @@ import WeekRow from './WeekRow';
 import DModal from './DModal';
 
 import PropTypes from 'prop-types';
-import moment  from 'moment';
+// import moment  from 'moment';
 
+import './DateFuncs';
 
 class TrainingGrid extends Component {
 
@@ -27,14 +28,19 @@ class TrainingGrid extends Component {
 
     calculateparms()
     {
-      var raceday_m =  moment(this.props.raceDate);
-      this.raceDow = raceday_m.isoWeekday(); //Monday=1, Sunday=7
+      var raceday_m = new Date(this.props.raceDate);
+      this.raceDow = raceday_m.getIsoWeekday(); //Monday=1, Sunday=7
 
       this.numWeeks = this.props.weeks.length-1;
-      var raceWeekMonday_m = raceday_m.subtract(this.raceDow -1, 'days');
-      var trainingStart_m  = raceWeekMonday_m.subtract(this.numWeeks, 'weeks');
+      // var raceWeekMonday_m = raceday_m.subtract(this.raceDow -1, 'days');
+      
+      var raceWeekMonday_m = raceday_m.addDays(-(this.raceDow - 1));
+      // raceWeekMonday_m.setDate(raceday_m.getDate() - (this.raceDow - 1));
+     
+      var trainingStart_m = raceWeekMonday_m.addWeeks(-this.numWeeks);
+
       this.todayYear = new Date().getFullYear();
-      this.todayWeek        = moment().isoWeek() - trainingStart_m.isoWeek() + this.todayYear;
+      this.todayWeek = new Date().getWeek() - trainingStart_m.getWeek() + this.todayYear;
 
     }
 
@@ -46,10 +52,27 @@ class TrainingGrid extends Component {
         this.setState({ show: state, data:desc });
     }
 
-    calculateDate(i){
-        var date = moment(this.props.raceDate).add((8-this.raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
 
-        return date;
+    formatDate(date) {
+      return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric'
+      });
+    }
+    calculateDate(i){
+        // var date = moment(this.props.raceDate).add((8-this.raceDow),'days').subtract(i, 'weeks').format("MMM DD YYYY");
+        const baseDate = new Date(this.props.raceDate);
+
+        // Add (8 - this.raceDow) days
+        baseDate.setDate(baseDate.getDate() + (8 - this.raceDow));
+
+        // Subtract i weeks
+        baseDate.setDate(baseDate.getDate() - (i * 7));
+
+        // Format like "MMM DD YYYY"
+        const formattedDate = this.formatDate(baseDate);
+        return formattedDate;
     }
 
     render() {
@@ -76,7 +99,7 @@ class TrainingGrid extends Component {
 
                 <tbody>
                   {props.weeks.map((week,i) => {
-                      return <WeekRow key={i} week= {week} theme={props.themes[i]} onClickCell={this.cellClickHandler} weekNum={i + this.todayYear} raceDow={this.raceDow} raceWeek={this.numWeeks + this.todayYear} todayWeek={this.todayWeek} date={this.calculateDate((props.weeks.length)-i)}  />
+                      return <WeekRow key={i} week= {week} theme={props.themes[i]} onClickCell={this.cellClickHandler} weekIndex={i+1} weekNum={i + this.todayYear} raceDow={this.raceDow} raceWeek={this.numWeeks + this.todayYear} todayWeek={this.todayWeek} date={this.calculateDate((props.weeks.length)-i)}  />
                   })}
                 </tbody>
               </table>
