@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+// import styles from './App.module.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 //import { CookiesProvider } from 'react-cookie';
