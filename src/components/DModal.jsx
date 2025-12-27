@@ -1,35 +1,25 @@
-import React, { Component } from 'react';
-import {Modal} from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-class DModal extends Component {
+function DModal({ show, onHandler, data }) {
+  if (!show) return null;
 
-
-    render() {
-      debugger;
-      var {props} = this;
-      return (
-        <div>
-          <Modal show={props.show} onHide={props.onHandler.bind(this,false)} className="modal-dialog-centered">
-
-            <Modal.Header closeButton>
-            </Modal.Header>
-
-            <Modal.Body>
-                {props.data}
-            </Modal.Body>
-
-          </Modal>
+  return (
+    <>
+      <div className="modal" style={{ display: 'block' }} role="dialog" aria-modal="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <button type="button" className="close" aria-label="Close" onClick={() => onHandler(false)}>
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div className="modal-body">{data}</div>
+          </div>
         </div>
-      );
-    }
-  }
-
-
-DModal.propTypes = {
-  data: PropTypes.string.isRequired,
-  onHandler : PropTypes.func.isRequired,
-  show:PropTypes.bool.isRequired
-};
+      </div>
+      <div className="modal-backdrop fade show" onClick={() => onHandler(false)} />
+    </>
+  );
+}
 
 export default DModal;
