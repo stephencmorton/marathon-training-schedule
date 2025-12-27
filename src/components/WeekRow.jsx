@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './DateFuncs';
 
 class WeekRow extends Component {
 
-        constructor(props, context) {
-            super(props, context);
-            this.today_dow = new Date().getDay();
-            if (this.today_dow === 0) {this.today_dow = 7;}
+    constructor(props, context) {
+        super(props, context);
+        this.today_dow = new Date().getDay();
+        if (this.today_dow === 0) {this.today_dow = 7;}
     }
 
     isEmptyOrNull(value){
@@ -16,7 +17,7 @@ class WeekRow extends Component {
 
     render() {
         var {props} = this;
-        var weeknum = Number(this._reactInternalFiber.key) + 1;
+        var weeknum = props.weekIndex ; 
         return (
             <tr >
               <th className={(props.weekNum === props.todayWeek) ? 'thisWeek' : (props.weekNum < props.todayWeek) ? 'previousDate' : ''} >{weeknum} - {props.date} <br/><span class="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>

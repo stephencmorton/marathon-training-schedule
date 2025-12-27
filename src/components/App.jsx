@@ -180,7 +180,9 @@ class App extends Component {
               <table className="table table-bordered">
 
                 <thead>
-                  <th colspan="5"><center>Paces</center></th>
+                  <tr>
+                  <th colSpan="5"><center>Paces</center></th>
+                  </tr>
                   <tr>
                     <th>Acronym</th>
                     <th>Name</th>
