@@ -154,7 +154,7 @@ class App extends Component {
                   </div>
                   <div className="form-group">
 
-                    <label className="col-md-4 control-label" htmlFor="s_trainingProgram"> Training Program Name : </label>
+                    <label className="col-md-4 control-label" htmlFor="s_trainingProgram"> Training Program Name: </label>
                     <div className="col-sm-8">
                       <select value={state.selectedFile} id="s_trainingProgram" onChange={this.onProgramChange.bind(this)}  className="form-control">
                         <option value="">Select</option>
