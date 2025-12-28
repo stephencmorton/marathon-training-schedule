@@ -157,7 +157,7 @@ function App() {
           </center>
           {
               state.race !== "" && state.selectedFile !== "" &&
-                  <TrainingGrid weeks={state.weeks}  raceDate={state.race} themes={state.themes}/>
+                  <TrainingGrid raceDate={new Date(state.race)} weeks={state.weeks} themes={state.themes} today={new Date()}/>
           }
 
 
