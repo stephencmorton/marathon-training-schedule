@@ -23,24 +23,31 @@ function WeekRow(props) {
         if (week.summary !== week.description) { summary = week.summary + " ..."; }
 
         summary = isEmptyOrNull(summary);
-        if (props.weekIndex === props.raceWeekIndex && props.raceDow === (i+1))
-        {  
-          summary = 'Race';
-        }
-        
+
         let cellClass = '';
-        if (props.weekIndex === props.raceWeekIndex& props.raceDow === (i+1)) {
-          cellClass = 'raceDay';
-        } else if (props.weekIndex === props.raceWeekIndex& props.raceDow < (i+1)) {
-          summary= '';
-        } else if (props.weekIndex === props.todayWeekIndex && props.todayDow === (i+1)) {
-          cellClass = 'today';
-        } else if (props.weekIndex === props.todayWeekIndex) {
-          cellClass = 'thisWeek';
-        } else if (props.weekIndex < props.todayWeekIndex) {
+        if (props.weekIndex < props.todayWeekIndex) {
           cellClass = 'previousDate';
         }
-        
+        else {
+          if (props.weekIndex === props.todayWeekIndex) {
+            cellClass = 'thisWeek';
+            if (props.todayDow === (i + 1)) {
+              cellClass = 'today';
+            }
+          }
+
+          if (props.weekIndex === props.raceWeekIndex) {
+            if (props.raceDow === (i + 1)) {
+              summary = 'Race';
+              cellClass = 'raceDay';
+            }
+            else if (props.raceDow < (i + 1)) {
+              summary = '';
+              cellClass = 'postRace';
+            }
+          }
+        }
+
         return (
           <td
           key={i}

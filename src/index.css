@@ -35,6 +35,10 @@ td:hover{
 .raceDay{
   border: 2px solid yellow !important;
 }
+.postRace{
+    background-color:#cdcdcd;
+    color:#909090;
+}
 
 th.thisWeek, td.thisWeek {
     background-color:#fefefe;
