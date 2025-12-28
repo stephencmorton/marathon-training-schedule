@@ -5,21 +5,20 @@ import DModal from './DModal';
 // import PropTypes from 'prop-types';
 
 import './DateFuncs';
+import { weekDifference, isoWeekStart } from './DateFuncs';
 
 function TrainingGrid(props) {
     const [show, setShow] = useState(false);
     const [data, setData] = useState('');
 
     const calculateParms = useMemo(() => {
-        const raceday_m = new Date(props.raceDate);
-        const raceDow = raceday_m.getIsoWeekday(); // Monday=1, Sunday=7
-        const numWeeks = props.weeks.length - 1;
-        const raceWeekMonday_m = raceday_m.addDays(-(raceDow - 1));
-        const trainingStart_m = raceWeekMonday_m.addWeeks(-numWeeks);
-        const todayYear = new Date().getFullYear();
-        const todayWeek = new Date().getWeek() - trainingStart_m.getWeek() + todayYear;
-        return { raceDow, numWeeks, todayYear, todayWeek };
-    }, [props.raceDate, props.weeks]);
+        const raceDow   = props.raceDate.getIsoWeekday(); // Monday=1, Sunday=7
+        const numWeeks  = props.weeks.length;
+        const trainingStartDate = isoWeekStart(props.raceDate).addWeeks(-numWeeks+1);
+        const todayWeekIndex = numWeeks - weekDifference(props.raceDate, props.today) ;
+        const todayDow = props.today.getIsoWeekday();
+        return { raceDow, numWeeks, todayWeekIndex, todayDow, trainingStartDate};
+    }, [props.raceDate, props.weeks, props.today]);
 
     const handler = useCallback((state) => {
         setShow(state);
@@ -38,11 +37,9 @@ function TrainingGrid(props) {
       });
     }
 
-    function calculateDate(i){
-        const baseDate = new Date(props.raceDate);
-        baseDate.setDate(baseDate.getDate() + (8 - calculateParms.raceDow));
-        baseDate.setDate(baseDate.getDate() - (i * 7));
-        return formatDate(baseDate);
+    function calculateDate(weekIndex){
+        // Data of Monday for week i
+        return formatDate(calculateParms.trainingStartDate.addWeeks(weekIndex));
     }
 
     return (
@@ -67,15 +64,15 @@ function TrainingGrid(props) {
                   return (
                     <WeekRow
                       key={i}
-                      week={week}
-                      theme={props.themes[i]}
-                      onClickCell={cellClickHandler}
-                      weekIndex={i+1}
-                      weekNum={i + calculateParms.todayYear}
+                      dateFmt={calculateDate(i)}
                       raceDow={calculateParms.raceDow}
-                      raceWeek={calculateParms.numWeeks + calculateParms.todayYear}
-                      todayWeek={calculateParms.todayWeek}
-                      date={calculateDate((props.weeks.length)-i)}
+                      raceWeekIndex={calculateParms.numWeeks}
+                      schedule={week}
+                      theme={props.themes[i]}
+                      todayDow={calculateParms.todayDow}
+                      todayWeekIndex={calculateParms.todayWeekIndex}
+                      weekIndex={i+1}
+                      onClickCell={cellClickHandler}
                     />
                   );
               })}
@@ -92,7 +89,8 @@ function TrainingGrid(props) {
 // TrainingGrid.propTypes = {
 //     weeks : PropTypes.arrayOf(PropTypes.arrayOf).isRequired,
 //     themes: PropTypes.arrayOf(PropTypes.arrayOf).isRequired,
-//     raceDate : PropTypes.string.isRequired
+//     raceDate : PropTypes.instanceOf(Date).isRequired
+//     today : PropTypes.instanceOf(Date).isRequired
 // };
 
 export default TrainingGrid;
