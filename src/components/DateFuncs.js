@@ -10,20 +10,19 @@ Date.prototype.getWeek = function () {
 };
 
 Date.prototype.getIsoWeekday = function() {
-    var date = new Date(this.getTime());
-    let day = date.getDay();
-    // Adjust the day to ISO standard: Sunday (0) becomes 7
-    return day === 0 ? 7 : day;
+  const day = this.getDay();
+  // Adjust the day to ISO standard: Sunday (0) becomes 7
+  return day === 0 ? 7 : day;
 }
 
 Date.prototype.addDays = function(days) {
-    var date = new Date(this.getTime());
+    var date = new Date(this);
     date.setDate(date.getDate() + days);
     return date;
 }
 
 Date.prototype.addWeeks = function(weeks) {
-    var date = new Date(this.getTime());
+    var date = new Date(this);
     date.setDate(date.getDate() + (weeks * 7));
     return date;
 }
