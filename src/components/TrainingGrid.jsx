@@ -11,14 +11,14 @@ function TrainingGrid(props) {
     const [data, setData] = useState('');
 
     const calculateParms = useMemo(() => {
-        const raceday_m = new Date(props.raceDate);
-        const raceDow = raceday_m.getIsoWeekday(); // Monday=1, Sunday=7
+        const raceday_d = new Date(props.raceDate);
+        const raceDow = raceday_d.getIsoWeekday(); // Monday=1, Sunday=7
         const numWeeks = props.weeks.length - 1;
-        const raceWeekMonday_m = raceday_m.addDays(-(raceDow - 1));
-        const trainingStart_m = raceWeekMonday_m.addWeeks(-numWeeks);
+        const raceWeekMonday_d = raceday_d.addDays(-(raceDow - 1));
+        const trainingStart_d = raceWeekMonday_d.addWeeks(-numWeeks);
         const todayYear = new Date().getFullYear();
-        const todayWeek = new Date().getWeek() - trainingStart_m.getWeek() + todayYear;
-        return { raceDow, numWeeks, todayYear, todayWeek };
+        const todayWeek = new Date().getWeek() - trainingStart_d.getWeek() + todayYear;
+        return { raceDow, numWeeks, todayYear, todayWeek, raceWeekMonday_d};
     }, [props.raceDate, props.weeks]);
 
     const handler = useCallback((state) => {
@@ -39,10 +39,11 @@ function TrainingGrid(props) {
     }
 
     function calculateDate(i){
-        const baseDate = new Date(props.raceDate);
-        baseDate.setDate(baseDate.getDate() + (8 - calculateParms.raceDow));
-        baseDate.setDate(baseDate.getDate() - (i * 7));
-        return formatDate(baseDate);
+        // const baseDate = new Date(props.raceDate);
+        // baseDate.setDate(baseDate.getDate() + (8 - calculateParms.raceDow));
+        // baseDate.setDate(calculateParms.raceWeekMonday_d.getDate() - (i * 7));
+        // return formatDate(baseDate);
+        return formatDate(calculateParms.raceWeekMonday_d.addWeeks(-i));
     }
 
     return (

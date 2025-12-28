@@ -6,29 +6,53 @@ function isEmptyOrNull(value){
     return ['', undefined, null].indexOf(value) !== -1 ? '-' : value;
 }
 
-function WeekRow(props) {
-    const todayDow = (function(){ let d = new Date().getDay(); return d === 0 ? 7 : d; })();
-    const weeknum = props.weekNum;
+const todayDow = new Date().getIsoWeekday();
 
-    return (
-        <tr>
-          <th className={(props.weekNum === props.todayWeek) ? 'thisWeek' : (props.weekNum < props.todayWeek) ? 'previousDate' : ''} >{weeknum} - {props.date} <br/><span className="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>
-          {props.week.map((week,i) => {
-              let summary = week.summary;
-              if (week.summary !== week.description) { summary = week.summary + " ..."; }
-              const cellClass = (props.weekNum === props.raceWeek && props.raceDow === (i+1)) ? 'raceDay' : (props.weekNum === props.todayWeek && todayDow === (i+1)) ? 'today' : (props.weekNum === props.todayWeek) ? 'thisWeek' : (props.weekNum < props.todayWeek) ? 'previousDate' : '';
-              return (
-                  <td
-                    key={i}
-                    className={cellClass}
-                    onClick={() => props.onClickCell(true, isEmptyOrNull(week.description))}
-                  >
-                    {(props.weekNum === props.raceWeek && props.raceDow === (i+1)) ? 'Race' : isEmptyOrNull(summary)}
-                  </td>
-              );
-          })}
-        </tr>
-    );
+function WeekRow(props) {
+  // compute header class more readably
+  let headerClass = '';
+  if (props.weekNum === props.todayWeek) {
+    headerClass = 'thisWeek';
+  } else if (props.weekNum < props.todayWeek) {
+    headerClass = 'previousDate';
+  }
+
+  return (
+    <tr>
+      <th className={headerClass} >{props.weekIndex} - {props.date} <br/><span className="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>
+      {props.week.map((week,i) => {
+        let summary = week.summary;
+        if (week.summary !== week.description) { summary = week.summary + " ..."; }
+
+        summary = isEmptyOrNull(summary);
+        if (props.weekNum === props.raceWeek && props.raceDow === (i+1))
+        {  
+          summary = 'Race';
+        }
+        
+        let cellClass = '';
+        if (props.weekNum === props.raceWeek && props.raceDow === (i+1)) {
+          cellClass = 'raceDay';
+        } else if (props.weekNum === props.todayWeek && todayDow === (i+1)) {
+          cellClass = 'today';
+        } else if (props.weekNum === props.todayWeek) {
+          cellClass = 'thisWeek';
+        } else if (props.weekNum < props.todayWeek) {
+          cellClass = 'previousDate';
+        }
+        
+        return (
+          <td
+          key={i}
+          className={cellClass}
+          onClick={() => props.onClickCell(true, isEmptyOrNull(week.description))}
+          >
+          {summary}
+          </td>
+        );
+      })}
+    </tr>
+  );
 }
 
 // WeekRow.propTypes = {
