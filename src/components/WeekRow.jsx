@@ -19,8 +19,8 @@ function WeekRow(props) {
 
   return (
     <tr>
-      <th className={headerClass} >{props.weekIndex} - {props.date} <br/><span className="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>
-      {props.week.map((week,i) => {
+      <th className={headerClass} >{props.weekIndex} - {props.dateFmt} <br/><span className="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>
+      {props.schedule.map((week,i) => {
         let summary = week.summary;
         if (week.summary !== week.description) { summary = week.summary + " ..."; }
 
@@ -60,8 +60,8 @@ function WeekRow(props) {
 //     raceWeek: PropTypes.number.isRequired,
 //     weekNum : PropTypes.number.isRequired,
 //     todayWeek : PropTypes.number.isRequired,
-//     date : PropTypes.string.isRequired,
-//     week : PropTypes.array.isRequired,
+//     dateFmt : PropTypes.string.isRequired,
+//     schedule : PropTypes.array.isRequired,
 //     theme: PropTypes.string.isRequired,
 //     onClickCell : PropTypes.func.isRequired
 // };

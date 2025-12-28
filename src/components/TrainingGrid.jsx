@@ -39,10 +39,7 @@ function TrainingGrid(props) {
     }
 
     function calculateDate(i){
-        // const baseDate = new Date(props.raceDate);
-        // baseDate.setDate(baseDate.getDate() + (8 - calculateParms.raceDow));
-        // baseDate.setDate(calculateParms.raceWeekMonday_d.getDate() - (i * 7));
-        // return formatDate(baseDate);
+        // Data of Monday for week i
         return formatDate(calculateParms.raceWeekMonday_d.addWeeks(-i));
     }
 
@@ -68,7 +65,7 @@ function TrainingGrid(props) {
                   return (
                     <WeekRow
                       key={i}
-                      week={week}
+                      schedule={week}
                       theme={props.themes[i]}
                       onClickCell={cellClickHandler}
                       weekIndex={i+1}
@@ -76,7 +73,7 @@ function TrainingGrid(props) {
                       raceDow={calculateParms.raceDow}
                       raceWeek={calculateParms.numWeeks + calculateParms.todayYear}
                       todayWeek={calculateParms.todayWeek}
-                      date={calculateDate((props.weeks.length)-i)}
+                      dateFmt={calculateDate((props.weeks.length)-i)}
                     />
                   );
               })}
