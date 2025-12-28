@@ -18,9 +18,9 @@ function WeekRow(props) {
   return (
     <tr>
       <th className={headerClass} >{props.weekIndex} - {props.dateFmt} <br/><span className="theme">&nbsp;&nbsp;&nbsp;{props.theme}</span></th>
-      {props.schedule.map((week,i) => {
-        let summary = week.summary;
-        if (week.summary !== week.description) { summary = week.summary + " ..."; }
+      {props.schedule.map((day,i) => {
+        let summary = day.summary;
+        if (day.summary !== day.description) { summary = day.summary + " ..."; }
 
         summary = isEmptyOrNull(summary);
 
@@ -52,7 +52,7 @@ function WeekRow(props) {
           <td
           key={i}
           className={cellClass}
-          onClick={() => props.onClickCell(true, isEmptyOrNull(week.description))}
+          onClick={() => props.onClickCell(true, isEmptyOrNull(day.description))}
           >
           {summary}
           </td>
