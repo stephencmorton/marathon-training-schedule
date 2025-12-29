@@ -73,11 +73,34 @@ function App() {
     })();
 
     const [state, setState] = useState(initial);
+      const defaultPrograms = [
+        { filename: 'dave_advanced.json', label: 'Full: Dave Advanced' },
+        { filename: 'dave_intermediate.json', label: 'Full: Dave Intermediate' },
+        { filename: 'dave_first_timer.json', label: 'Full: Dave First Timer' },
+        { filename: 'marathon_boston_dave.json', label: 'Full: Dave Special Boston Program' },
+        { filename: 'marathon_rlrf.json', label: 'Full: FIRST RLRF 3plus2' },
+        { filename: 'dave_advanced_half.json', label: 'Half: Dave Advanced' },
+        { filename: 'dave_basic_half.json', label: 'Half: Dave Basic' },
+      ];
+      const [programList, setProgramList] = useState(defaultPrograms);
 
     // load editable races list from /races.json in public/ (overrides defaultRaces)
     useEffect(() => {
       let mounted = true;
       loadRaces().then(r => { if (mounted) setState(prev => ({ ...prev, races: r })); }).catch(() => {});
+      return () => { mounted = false; };
+    }, []);
+
+    // load editable program list from /programs/programs.json (optional override)
+    useEffect(() => {
+      let mounted = true;
+      fetch('/programs/programs.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(programs => {
+        if (!mounted) return;
+        if (Array.isArray(programs) && programs.length) {
+          programs.sort((a, b) => a.label.localeCompare(b.label));
+          setProgramList(programs);
+        }
+      }).catch(() => {});
       return () => { mounted = false; };
     }, []);
 
@@ -91,9 +114,19 @@ function App() {
         localStorage.setItem('gp', state.gp);
     }
 
-    function onProgramChange(e){
+    async function onProgramChange(e){
         const file = e.target.value;
-        const fileContent = onSelectFile(file);
+        let fileContent = null;
+        try {
+          const res = await fetch(`/programs/${file}`, { cache: 'no-store' });
+          if (res.ok) fileContent = await res.json();
+        } catch (err) {
+          fileContent = null;
+        }
+        if (!fileContent) {
+          fileContent = onSelectFile(file);
+        }
+
         let dist = MARATHON_DIST;
         if (String(file).includes('half')) { dist=HALF_DIST; }
         const vobj = new Vdot(true, dist, state.gp + ":00");
@@ -149,13 +182,9 @@ function App() {
                 <div className="col-sm-8">
                   <select value={state.selectedFile} id="s_trainingProgram" onChange={onProgramChange}  className="form-control">
                     <option value="">Select</option>
-                    <option value="dave_advanced.json">Full: Dave Advanced</option>
-                    <option value="dave_intermediate.json">Full: Dave Intermediate</option>
-                    <option value="dave_first_timer.json">Full: Dave First Timer</option>
-                    <option value="marathon_boston_dave.json">Full: Dave Special Boston Program</option>
-                    <option value="marathon_rlrf.json">Full: FIRST RLRF 3plus2</option>
-                    <option value="dave_advanced_half.json">Half: Dave Advanced</option>
-                    <option value="dave_basic_half.json">Half: Dave Basic</option>
+                    {programList.map((p, i) => (
+                      <option key={i} value={p.filename}>{p.label}</option>
+                    ))}
                   </select>
                 </div>
               </div>
