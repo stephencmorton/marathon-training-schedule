@@ -1,3 +1,4 @@
+import marathon_default from './marathon_default.json';
 const defaultRaces = [
         "Boston - April 20 2026",
         "Cornwall - April 25 2026",
@@ -18,4 +19,4 @@ async function loadRaces() {
     return defaultRaces;
 }
 
-export { defaultRaces, loadRaces };
+export { defaultRaces, loadRaces , marathon_default};
