@@ -12,7 +12,6 @@ In the project directory, you can run:
 
 
 ## To Do notes for development
-- Allow modular drop-in of races
 - Allow arbitrary race dates.
 - Remove crazy race schedule code with filename to variable to filename
 - Filter training schedules based on whether race is a half or a full marathon.

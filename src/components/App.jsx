@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TrainingGrid from './TrainingGrid';
 
 import {Vdot} from './Vdot.js';
@@ -11,7 +11,7 @@ import m_dave_int from '../data/dave_intermediate.json';
 import m_dave_boston from '../data/marathon_boston_dave.json';
 import m_rlrf        from '../data/marathon_rlrf.json';
 
-import Races from '../data/Races';
+import { loadRaces, defaultRaces } from '../data/Races';
 
 function App() {
 
@@ -61,7 +61,7 @@ function App() {
         const plan = onSelectFile(file);
         return {
             race: localStorage.getItem('race') || '',
-            races: Races,
+            races: defaultRaces,
             distance: dist,
             gp: gp,
             title: plan.title,
@@ -73,6 +73,13 @@ function App() {
     })();
 
     const [state, setState] = useState(initial);
+
+    // load editable races list from /races.json in public/ (overrides defaultRaces)
+    useEffect(() => {
+      let mounted = true;
+      loadRaces().then(r => { if (mounted) setState(prev => ({ ...prev, races: r })); }).catch(() => {});
+      return () => { mounted = false; };
+    }, []);
 
     function onGPChange(e){
         const newGp = e.target.value;
