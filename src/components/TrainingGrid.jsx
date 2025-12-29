@@ -5,18 +5,18 @@ import DModal from './DModal';
 // import PropTypes from 'prop-types';
 
 import './DateFuncs';
-import { weekDifference, isoWeekStart } from './DateFuncs';
+import { differenceInCalendarWeeks, startOfWeek, getIsoWeekday, addWeeks } from './DateFuncs';
 
 function TrainingGrid(props) {
     const [show, setShow] = useState(false);
     const [data, setData] = useState('');
 
     const calculateParms = useMemo(() => {
-        const raceDow   = props.raceDate.getIsoWeekday(); // Monday=1, Sunday=7
+        const raceDow   = getIsoWeekday(props.raceDate); // Monday=1, Sunday=7
         const numWeeks  = props.weeks.length;
-        const trainingStartDate = isoWeekStart(props.raceDate).addWeeks(-numWeeks+1);
-        const todayWeekIndex = numWeeks - weekDifference(props.raceDate, props.today) ;
-        const todayDow = props.today.getIsoWeekday();
+        const trainingStartDate = addWeeks(startOfWeek(props.raceDate), -numWeeks+1);
+        const todayWeekIndex = numWeeks - differenceInCalendarWeeks(props.raceDate, props.today) -1;
+        const todayDow = getIsoWeekday(props.today);
         return { raceDow, numWeeks, todayWeekIndex, todayDow, trainingStartDate};
     }, [props.raceDate, props.weeks, props.today]);
 
@@ -39,7 +39,7 @@ function TrainingGrid(props) {
 
     function calculateDate(weekIndex){
         // Data of Monday for week i
-        return formatDate(calculateParms.trainingStartDate.addWeeks(weekIndex));
+        return formatDate(addWeeks(calculateParms.trainingStartDate, weekIndex));
     }
 
     return (

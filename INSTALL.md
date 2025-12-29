@@ -12,8 +12,6 @@ In the project directory, you can run:
 
 
 ## To Do notes for development
-- Fix up date routines and variables. And various 0- vs 1-based index code.
-- Remove _m variables or at least rename them _d as they're dates not moments.
 - Allow modular drop-in of races
 - Allow arbitrary race dates.
 - Remove crazy race schedule code with filename to variable to filename
