@@ -1,10 +1,7 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import WeekRow from './WeekRow';
 import DModal from './DModal';
 
-// import PropTypes from 'prop-types';
-
-import './DateFuncs';
 import { differenceInCalendarWeeks, startOfWeek, getIsoWeekday, addWeeks } from './DateFuncs';
 
 function TrainingGrid(props) {

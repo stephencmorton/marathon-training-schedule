@@ -39,7 +39,7 @@ function App() {
         const vobj = new Vdot(true, dist, gp + ":00");
         const plan = { weeks: [], title: '', themes: [] };
         return {
-            race: localStorage.getItem('race') || '',
+            race: localStorage.getItem('race') || Date.now(),
             races: defaultRaces,
             distance: dist,
             gp: gp,
