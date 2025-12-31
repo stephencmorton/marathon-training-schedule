@@ -9,7 +9,7 @@ const defaultRaces = [
 // Falls back to bundled `defaultRaces` if fetch fails.
 async function loadRaces() {
     try {
-        const res = await fetch('/races.json', { cache: 'no-store' });
+        const res = await fetch('./races.json', { cache: 'no-store' });
         if (!res.ok) throw new Error('fetch failed');
         const data = await res.json();
         if (Array.isArray(data)) return data;

@@ -14,7 +14,7 @@ function App() {
     async function loadProgram(filename) {
       if (!filename) return  marathon_default ;
       try {
-        const res = await fetch(`/programs/${filename}`, { cache: 'no-store' });
+        const res = await fetch(`./programs/${filename}`, { cache: 'no-store' });
         if (res.ok) {
           const data = await res.json();
           if (data && typeof data === 'object') return data;
@@ -65,7 +65,7 @@ function App() {
     useEffect(() => {
       let mounted = true;
       
-      fetch('/programs/programs.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(programs => {
+      fetch('./programs/programs.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(programs => {
         if (!mounted) return;
         if (Array.isArray(programs) && programs.length) {
           programs.sort((a, b) => a.label.localeCompare(b.label));
