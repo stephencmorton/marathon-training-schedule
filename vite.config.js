@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: './', // or '' for an empty string relative path
   test: {
     globals: true,
     environment: 'jsdom',
@@ -10,5 +11,6 @@ export default defineConfig({
   },
     build: {
     outDir: 'build', // CRA's default build output
+    
   },
 });
