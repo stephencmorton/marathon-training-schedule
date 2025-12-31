@@ -1,26 +1,27 @@
 {
   "name": "react_marathon_training_program",
-  "version": "0.2.0",
-	"type": "module",
-	"scripts": {
-		"start": "vite --port 3000 --open",
-		"dev": "vite --port 3000 --open",
-		"build": "vite build",
-		"serve": "vite preview --open",
-		"test": "vitest"
-	},
-	"dependencies": {
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --port 3000 --open",
+    "dev": "vite --port 3000 --open",
+    "build": "vite build",
+    "serve": "vite preview --open",
+    "test": "vitest"
+  },
+  "dependencies": {
     "react-bootstrap": "^0.32.4",
     "react-cookie": "^8.0.1"
-	},
-	"devDependencies": {
-		"@testing-library/jest-dom": "^6.6.3",
-		"@testing-library/react": "^16.2.0",
-		"@vitejs/plugin-react": "^4.3.4",
-		"jsdom": "^26.0.0",
-		"vite": "^6.2.1",
-		"vitest": "^3.0.8"
-	}
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "core-js": "^3.47.0",
+    "jsdom": "^27.4.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.8"
+  }
 }

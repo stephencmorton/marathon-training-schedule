@@ -1,7 +1,3 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
-import './DateFuncs';
-
 function isEmptyOrNull(value){
     return ['', undefined, null].indexOf(value) !== -1 ? '-' : value;
 }

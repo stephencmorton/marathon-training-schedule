@@ -1,0 +1,9 @@
+[
+  { "filename": "dave_advanced.json", "label": "Full: Dave Advanced" },
+  { "filename": "dave_intermediate.json", "label": "Full: Dave Intermediate" },
+  { "filename": "dave_first_timer.json", "label": "Full: Dave First Timer" },
+  { "filename": "marathon_boston_dave.json", "label": "Full: Dave Special Boston Program" },
+  { "filename": "marathon_rlrf.json", "label": "Full: FIRST RLRF 3plus2" },
+  { "filename": "dave_advanced_half.json", "label": "Half: Dave Advanced" },
+  { "filename": "dave_basic_half.json", "label": "Half: Dave Basic" }
+]

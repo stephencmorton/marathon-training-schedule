@@ -1,49 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TrainingGrid from './TrainingGrid';
 
 import {Vdot} from './Vdot.js';
 
-import h_dave_advanced from '../data/dave_advanced_half.json';
-import h_dave_basic from '../data/dave_basic_half.json';
-import m_dave_advanced from '../data/dave_advanced_2018.json';
-import m_dave_basic from '../data/dave_first_timer.json';
-import m_dave_int from '../data/dave_intermediate.json';
-import m_dave_boston from '../data/marathon_boston_dave.json';
-import m_rlrf        from '../data/marathon_rlrf.json';
-
-import Races from '../data/Races';
+import { loadRaces, defaultRaces, marathon_default} from '../data/Races';
 
 function App() {
 
     const MARATHON_DIST = 42195;
     const HALF_DIST    = 21098;
-    function onSelectFile(fileName){
-        switch(fileName){
-        case 'marathon_boston_dave.json':{
-            return m_dave_boston;
+
+    // load a program JSON by filename: try /programs/<file> else fall back to bundled default
+    async function loadProgram(filename) {
+      if (!filename) return  marathon_default ;
+      try {
+        const res = await fetch(`/programs/${filename}`, { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && typeof data === 'object') return data;
         }
-        case 'dave_advanced.json':{
-            return m_dave_advanced;
-        }
-        case 'dave_intermediate.json':{
-            return m_dave_int;
-        }
-        case 'dave_first_timer.json':{
-            return m_dave_basic;
-        }
-        case 'marathon_rlrf.json':{
-            return m_rlrf;
-        }
-        case 'dave_advanced_half.json':{
-            return h_dave_advanced;
-        }
-        case 'dave_basic_half.json':{
-            return h_dave_basic;
-        }
-        default:{
-            return {weeks:[],title:'',themes:[]};
-        }
-        }
+      } catch (e) {
+        // ignore and fall back
+      }
+      return marathon_default;
     }
 
     const initial = (() => {
@@ -58,10 +37,10 @@ function App() {
         let dist = MARATHON_DIST;
         if (String(file).includes('half')) { dist=HALF_DIST; }
         const vobj = new Vdot(true, dist, gp + ":00");
-        const plan = onSelectFile(file);
+        const plan = { weeks: [], title: '', themes: [] };
         return {
-            race: localStorage.getItem('race') || '',
-            races: Races,
+            race: localStorage.getItem('race') || Date.now(),
+            races: defaultRaces,
             distance: dist,
             gp: gp,
             title: plan.title,
@@ -73,6 +52,43 @@ function App() {
     })();
 
     const [state, setState] = useState(initial);
+    const [programList, setProgramList] = useState([]);
+
+    // load editable races list from /races.json in public/ (overrides defaultRaces)
+    useEffect(() => {
+      let mounted = true;
+      loadRaces().then(r => { if (mounted) setState(prev => ({ ...prev, races: r })); }).catch(() => {});
+      return () => { mounted = false; };
+    }, []);
+
+    // load editable program list from /programs/programs.json
+    useEffect(() => {
+      let mounted = true;
+      
+      fetch('/programs/programs.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(programs => {
+        if (!mounted) return;
+        if (Array.isArray(programs) && programs.length) {
+          programs.sort((a, b) => a.label.localeCompare(b.label));
+          setProgramList(programs);
+        }
+      }).catch(() => {setProgramList([{ "filename": " ", "label": "Full: Default Program" }]);});
+      return () => { mounted = false; };
+    }, []);
+
+    // If an initial program was selected (from localStorage), load it asynchronously
+    useEffect(() => {
+      let mounted = true;
+      (async () => {
+        const file = state.selectedFile;
+        // if (!file) return; // no file selected - use default bundled one
+        const fileContent = await loadProgram(file);
+        if (!mounted) return;
+        const dist = String(file).includes('half') ? HALF_DIST : MARATHON_DIST;
+        const vobj = new Vdot(true, dist, state.gp + ":00");
+        setState(prev => ({ ...prev, weeks: fileContent.weeks || [], themes: fileContent.themes || [], title: fileContent.title || '', paces: vobj.makeCalculations(), distance: dist }));
+      })();
+      return () => { mounted = false; };
+    }, []);
 
     function onGPChange(e){
         const newGp = e.target.value;
@@ -84,9 +100,9 @@ function App() {
         localStorage.setItem('gp', state.gp);
     }
 
-    function onProgramChange(e){
+    async function onProgramChange(e){
         const file = e.target.value;
-        const fileContent = onSelectFile(file);
+        const fileContent = await loadProgram(file);
         let dist = MARATHON_DIST;
         if (String(file).includes('half')) { dist=HALF_DIST; }
         const vobj = new Vdot(true, dist, state.gp + ":00");
@@ -142,13 +158,9 @@ function App() {
                 <div className="col-sm-8">
                   <select value={state.selectedFile} id="s_trainingProgram" onChange={onProgramChange}  className="form-control">
                     <option value="">Select</option>
-                    <option value="dave_advanced.json">Full: Dave Advanced</option>
-                    <option value="dave_intermediate.json">Full: Dave Intermediate</option>
-                    <option value="dave_first_timer.json">Full: Dave First Timer</option>
-                    <option value="marathon_boston_dave.json">Full: Dave Special Boston Program</option>
-                    <option value="marathon_rlrf.json">Full: FIRST RLRF 3plus2</option>
-                    <option value="dave_advanced_half.json">Half: Dave Advanced</option>
-                    <option value="dave_basic_half.json">Half: Dave Basic</option>
+                    {programList.map((p, i) => (
+                      <option key={i} value={p.filename}>{p.label}</option>
+                    ))}
                   </select>
                 </div>
               </div>
